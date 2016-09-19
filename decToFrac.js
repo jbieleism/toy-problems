@@ -26,7 +26,6 @@ function decToFrac (number){
       }
     }
   }
-
   //console.log("" + numera + "/" + denom + "")
   let GCD = findGCD(numera, denom);
   let reducedFraction = "" + (numera/GCD) + "/" + (denom/GCD) + "";
