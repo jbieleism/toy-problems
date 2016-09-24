@@ -1,42 +1,71 @@
 function allAnagrams(string){
-  //create result array
   var result = [];
+  var splitString = string.split("");
+  function recurse(){
+    var resultString = "";
+    if (resultString.length === splitString.length){
+      if (resultString.indexOf(result) === -1){
+        result.push(result);
+        return;
+      }
+    }
+    for(var i = 0; i < splitString.length; i++){
+      var start = splitString[i];
+      var resultString = resultString.concat(start)
+      var remaining = splitString.slice(i);
+
+      console.log(start, "our starting character")
+      console.log(resultString, "our current result string")
+      console.log(remaining, "our remaining characters")
 
 
-
-  //function will shuffle last two
-  function letterShuffle(){
-    //create variables to swap
-    var first = string[0];
-    var second = string[1];
-
-
-
-
-    //swap first and second letters,
-    //move to next letter,
-    //swap second and third letter,
-    //....continue process until array length is reached
-
-
-    //check if number is already in result array
-      //if not, push it to the result array
+    }
+    console.log(resultString, "our final result string")
   }
-
-
-
-
-
-
-
-
-  //result.push(splitString.join(""));
-  return result;
-
-
+  recurse()
 }
 
 
 
+allAnagrams("Hello")
 
-console.log(allAnagrams("hello"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function allAnagrams(string){
+//   var result = [];
+//   var splitString = string.split("");
+//   function recurse(start, remaining){
+//     var resultString = "";
+//     if (resultString.length === splitString.length){
+//       console.log("Length met!")
+//       if (resultString.indexOf(result) === -1){
+//         result.push(result);
+//       }
+//       return;
+//     }
+//     for(var i = 0; i < splitString.length; i++){
+//       var start = splitString[i];
+//       resultString = resultString.concat(start)
+//       var remaining = splitString.slice();
+//       console.log(resultString)
+//     }
+//     recurse(start, remaining);
+//     console.log(resultString, "our final result string")
+//   }
+//   recurse(result, splitString)
+// }
+
+
+
+// allAnagrams("Hello")
